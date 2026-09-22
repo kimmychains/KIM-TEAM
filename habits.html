@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Effective Habits | KIM Team</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           EFFECTIVE HABITS PAGE
+        ========================================= */
+
+        .habits-hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 20, 38, 0.96) 0%,
+                    rgba(8, 20, 38, 0.84) 42%,
+                    rgba(8, 20, 38, 0.35) 75%,
+                    rgba(8, 20, 38, 0.18) 100%
+                ),
+                url("../images/effective-habits.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .habits-hero-content {
+            width: min(1180px, 90%);
+            margin: auto;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .habits-label {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .habits-hero h1 {
+            max-width: 760px;
+            font-size: clamp(3rem, 7vw, 6.2rem);
+            line-height: 0.98;
+            margin: 0 0 25px;
+            font-weight: 800;
+            letter-spacing: -3px;
+        }
+
+        .habits-hero h1 span {
+            color: #d8b56d;
+        }
+
+        .habits-hero p {
+            max-width: 650px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 35px;
+        }
+
+        .habits-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .habits-btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .habits-btn-primary {
+            background: #d8b56d;
+            color: #101b2b;
+        }
+
+        .habits-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(216,181,109,0.25);
+        }
+
+        .habits-btn-secondary {
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .habits-btn-secondary:hover {
+            background: rgba(255,255,255,0.14);
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .habits-intro {
+            padding: 100px 20px;
+            background: #f7f8fa;
+        }
+
+        .habits-intro-container {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: #a17c35;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .habits-intro h2 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            margin: 12px 0 20px;
+            color: #101b2b;
+        }
+
+        .habits-intro p {
+            max-width: 800px;
+            margin: auto;
+            color: #596273;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================================
+           HABITS CARDS
+        ========================================= */
+
+        .habits-curriculum {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .habits-heading {
+            max-width: 1100px;
+            margin: 0 auto 50px;
+        }
+
+        .habits-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #101b2b;
+            margin: 10px 0;
+        }
+
+        .habits-heading p {
+            color: #697386;
+            max-width: 650px;
+            line-height: 1.7;
+        }
+
+        .habits-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .habit-card {
+            position: relative;
+            padding: 38px;
+            border-radius: 18px;
+            background: #f8f9fb;
+            border: 1px solid #e8ebf0;
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+
+        .habit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #d8b56d;
+        }
+
+        .habit-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(16, 27, 43, 0.1);
+            border-color: #d8b56d;
+        }
+
+        .habit-number {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #a17c35;
+        }
+
+        .habit-card h3 {
+            margin: 12px 0;
+            color: #101b2b;
+            font-size: 1.6rem;
+        }
+
+        .habit-card p {
+            color: #687385;
+            line-height: 1.75;
+            margin-bottom: 22px;
+        }
+
+        .habit-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .habit-topics span {
+            padding: 7px 11px;
+            border-radius: 20px;
+            background: #e9edf3;
+            color: #394556;
+            font-size: 0.78rem;
+        }
+
+        .habit-link {
+            text-decoration: none;
+            color: #101b2b;
+            font-weight: 700;
+        }
+
+        .habit-link:hover {
+            color: #a17c35;
+        }
+
+
+        /* =========================================
+           PHILOSOPHY STRIP
+        ========================================= */
+
+        .habits-philosophy {
+            padding: 90px 20px;
+            background: #101b2b;
+            color: white;
+            text-align: center;
+        }
+
+        .habits-philosophy h2 {
+            max-width: 850px;
+            margin: auto;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.2;
+        }
+
+        .habits-philosophy p {
+            max-width: 650px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+        }
+
+
+        /* =========================================
+           PUBLIC / STUDENT CONTENT
+        ========================================= */
+
+        .habits-access {
+            padding: 100px 20px;
+            background: #f7f8fa;
+        }
+
+        .access-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .access-box {
+            padding: 40px;
+            border-radius: 18px;
+            background: white;
+            border: 1px solid #e5e8ed;
+        }
+
+        .access-box.student {
+            background: #101b2b;
+            color: white;
+        }
+
+        .access-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .access-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .access-box p {
+            line-height: 1.7;
+            color: #697386;
+        }
+
+        .access-box.student p {
+            color: rgba(255,255,255,0.7);
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .habits-cta {
+            padding: 100px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .habits-cta-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .habits-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            color: #101b2b;
+            margin-bottom: 20px;
+        }
+
+        .habits-cta p {
+            color: #697386;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .habits-hero {
+                min-height: 75vh;
+                background-position: center;
+            }
+
+            .habits-hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .habits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .access-container {
+                grid-template-columns: 1fr;
+            }
+
+            .habit-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .habits-hero-content {
+                padding: 80px 0;
+            }
+
+            .habits-hero p {
+                font-size: 1rem;
+            }
+
+            .habits-buttons {
+                flex-direction: column;
+            }
+
+            .habits-btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                KIM TEAM
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mathematics.html">Learning</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="habits-hero">
+
+            <div class="habits-hero-content">
+
+                <span class="habits-label">
+                    KIM TEAM • EFFECTIVE HABITS
+                </span>
+
+                <h1>
+                    Build habits that
+                    <span>build you.</span>
+                </h1>
+
+                <p>
+                    Learning is not only about what you know.
+                    It is also about how you study, how you manage
+                    your attention, how you use your time, and the
+                    principles that guide your decisions.
+                </p>
+
+                <div class="habits-buttons">
+
+                    <a href="#habits" class="habits-btn habits-btn-primary">
+                        Explore Habits
+                    </a>
+
+                    <a href="register.html" class="habits-btn habits-btn-secondary">
+                        Join KIM Team
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================== -->
+
+        <section class="habits-intro">
+
+            <div class="habits-intro-container">
+
+                <span class="section-tag">
+                    The KIM Approach
+                </span>
+
+                <h2>
+                    Discipline turns intention into progress.
+                </h2>
+
+                <p>
+                    Effective habits are systems that help you repeatedly
+                    do what matters. At KIM Team, we focus on practical
+                    habits that help learners study with purpose, protect
+                    their attention, manage their time, and live according
+                    to clear principles.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CURRICULUM
+        ========================================== -->
+
+        <section class="habits-curriculum" id="habits">
+
+            <div class="habits-heading">
+
+                <span class="section-tag">
+                    Four Foundations
+                </span>
+
+                <h2>
+                    The Effective Habits Framework
+                </h2>
+
+                <p>
+                    Four areas designed to help learners become more
+                    intentional, focused and consistent.
+                </p>
+
+            </div>
+
+
+            <div class="habits-grid">
+
+
+                <!-- HOW TO STUDY -->
+
+                <article class="habit-card">
+
+                    <span class="habit-number">
+                        01 / HOW TO STUDY
+                    </span>
+
+                    <h3>
+                        How to Study
+                    </h3>
+
+                    <p>
+                        Learn how to approach studying deliberately instead
+                        of simply spending more hours with your books.
+                    </p>
+
+                    <div class="habit-topics">
+
+                        <span>Active Learning</span>
+                        <span>Revision</span>
+                        <span>Memory</span>
+                        <span>Study Planning</span>
+
+                    </div>
+
+                    <a href="study.html" class="habit-link">
+                        Explore this area →
+                    </a>
+
+                </article>
+
+
+                <!-- DISTRACTIONS -->
+
+                <article class="habit-card">
+
+                    <span class="habit-number">
+                        02 / FOCUS
+                    </span>
+
+                    <h3>
+                        Minimizing Distractions
+                    </h3>
+
+                    <p>
+                        Understand what steals your attention and build
+                        an environment that makes focused work easier.
+                    </p>
+
+                    <div class="habit-topics">
+
+                        <span>Focus</span>
+                        <span>Phone Use</span>
+                        <span>Environment</span>
+                        <span>Attention</span>
+
+                    </div>
+
+                    <a href="distractions.html" class="habit-link">
+                        Explore this area →
+                    </a>
+
+                </article>
+
+
+                <!-- TIME OFFENDERS -->
+
+                <article class="habit-card">
+
+                    <span class="habit-number">
+                        03 / TIME
+                    </span>
+
+                    <h3>
+                        Time Offenders
+                    </h3>
+
+                    <p>
+                        Identify activities that quietly consume your time
+                        and learn how to take control of your daily schedule.
+                    </p>
+
+                    <div class="habit-topics">
+
+                        <span>Time Management</span>
+                        <span>Priorities</span>
+                        <span>Planning</span>
+                        <span>Consistency</span>
+
+                    </div>
+
+                    <a href="time-offenders.html" class="habit-link">
+                        Explore this area →
+                    </a>
+
+                </article>
+
+
+                <!-- PRINCIPLES -->
+
+                <article class="habit-card">
+
+                    <span class="habit-number">
+                        04 / PRINCIPLES
+                    </span>
+
+                    <h3>
+                        Living Principally
+                    </h3>
+
+                    <p>
+                        Develop personal principles that help you make
+                        thoughtful decisions even when circumstances change.
+                    </p>
+
+                    <div class="habit-topics">
+
+                        <span>Values</span>
+                        <span>Character</span>
+                        <span>Decisions</span>
+                        <span>Responsibility</span>
+
+                    </div>
+
+                    <a href="principles.html" class="habit-link">
+                        Explore this area →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PHILOSOPHY
+        ========================================== -->
+
+        <section class="habits-philosophy">
+
+            <h2>
+                “You do not rise to the level of your intentions.
+                Your systems shape what you repeatedly do.”
+            </h2>
+
+            <p>
+                KIM Team encourages learners to build systems that make
+                meaningful progress more consistent.
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             ACCESS
+        ========================================== -->
+
+        <section class="habits-access">
+
+            <div class="access-container">
+
+
+                <article class="access-box">
+
+                    <div class="access-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        For Everyone
+                    </h3>
+
+                    <p>
+                        Visitors can explore selected articles,
+                        principles and introductory learning material
+                        without registering.
+                    </p>
+
+                </article>
+
+
+                <article class="access-box student">
+
+                    <div class="access-icon">
+                        🔐
+                    </div>
+
+                    <h3>
+                        For KIM Students
+                    </h3>
+
+                    <p>
+                        Registered learners will eventually gain access
+                        to structured lessons, learning activities,
+                        progress tracking and section-specific content.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="habits-cta">
+
+            <div class="habits-cta-container">
+
+                <span class="section-tag">
+                    Start Building
+                </span>
+
+                <h2>
+                    Your habits are part of your education.
+                </h2>
+
+                <p>
+                    Join KIM Team and develop a learning system built
+                    around knowledge, discipline, focus and purposeful growth.
+                </p>
+
+                <a href="register.html" class="habits-btn habits-btn-primary">
+                    Become a KIM Learner
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h3>KIM TEAM</h3>
+
+                <p>
+                    Learn with purpose. Grow with structure.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Learning</h4>
+
+                <a href="mathematics.html">Mathematics</a>
+                <a href="programming.html">Programming</a>
+                <a href="communication.html">Communication</a>
+                <a href="habits.html">Effective Habits</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 KIM Team. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

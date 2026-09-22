@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Offenders | KIM TEAM</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #222;
+            background: #f7f9fc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #173b6c;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1769aa;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .time-hero {
+            min-height: 470px;
+            background:
+                linear-gradient(rgba(9, 28, 52, 0.78), rgba(9, 28, 52, 0.78)),
+                url("../images/effective-habits.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            color: white;
+        }
+
+        .time-hero-content {
+            max-width: 850px;
+        }
+
+        .time-label {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .time-hero h1 {
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .time-hero p {
+            font-size: 20px;
+            max-width: 680px;
+            margin: auto;
+            color: #e8eef6;
+        }
+
+        /* ================= INTRO ================= */
+
+        .time-intro {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 25px 50px;
+            text-align: center;
+        }
+
+        .time-intro h2 {
+            font-size: 34px;
+            color: #173b6c;
+            margin-bottom: 18px;
+        }
+
+        .time-intro p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* ================= TIME OFFENDERS ================= */
+
+        .offenders-section {
+            padding: 40px 7% 90px;
+        }
+
+        .offenders-section > h2 {
+            text-align: center;
+            color: #173b6c;
+            font-size: 34px;
+            margin-bottom: 45px;
+        }
+
+        .offenders-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .offender-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            border-top: 4px solid #1769aa;
+            transition: 0.3s;
+        }
+
+        .offender-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.11);
+        }
+
+        .offender-number {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+        .offender-card h3 {
+            color: #173b6c;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .offender-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* ================= TIME AUDIT ================= */
+
+        .time-audit {
+            background: #173b6c;
+            color: white;
+            padding: 80px 7%;
+        }
+
+        .audit-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .audit-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .audit-heading h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .audit-heading p {
+            color: #dce7f4;
+        }
+
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .audit-box {
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.16);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .audit-box strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .audit-box span {
+            font-size: 14px;
+            color: #dce7f4;
+        }
+
+        /* ================= DAILY SYSTEM ================= */
+
+        .daily-system {
+            padding: 90px 7%;
+            background: #ffffff;
+        }
+
+        .daily-system h2 {
+            text-align: center;
+            color: #173b6c;
+            font-size: 34px;
+            margin-bottom: 50px;
+        }
+
+        .system-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .system-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f4f7fb;
+            border-radius: 15px;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1769aa;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .system-step h3 {
+            color: #173b6c;
+            margin-bottom: 10px;
+        }
+
+        .system-step p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= CHECKLIST ================= */
+
+        .checklist {
+            padding: 80px 7%;
+            background: #eef3f8;
+        }
+
+        .checklist-container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        }
+
+        .checklist h2 {
+            text-align: center;
+            color: #173b6c;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e9ee;
+            color: #555;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            color: #1769aa;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        /* ================= CTA ================= */
+
+        .time-cta {
+            padding: 90px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1769aa, #173b6c);
+            color: white;
+        }
+
+        .time-cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .time-cta p {
+            max-width: 650px;
+            margin: auto auto 30px;
+            color: #e5edf7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: #173b6c;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101d2e;
+            color: #ccd6e2;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .offenders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .audit-grid,
+            .system-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .time-hero h1 {
+                font-size: 43px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 17px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            }
+
+            nav.show {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .time-hero {
+                min-height: 420px;
+            }
+
+            .time-hero h1 {
+                font-size: 36px;
+            }
+
+            .time-hero p {
+                font-size: 17px;
+            }
+
+            .offenders-grid,
+            .audit-grid,
+            .system-container {
+                grid-template-columns: 1fr;
+            }
+
+            .time-intro h2,
+            .offenders-section > h2,
+            .daily-system h2 {
+                font-size: 29px;
+            }
+
+            .checklist-container {
+                padding: 30px 22px;
+            }
+
+            .time-cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            KIM TEAM
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="mathematics.html">Mathematics</a></li>
+                <li><a href="programming.html">Programming</a></li>
+                <li><a href="communication.html">Communication</a></li>
+                <li><a href="habits.html">Effective Habits</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="time-hero">
+
+        <div class="time-hero-content">
+
+            <span class="time-label">
+                EFFECTIVE HABITS / 03
+            </span>
+
+            <h1>
+                Stop losing time without noticing.
+            </h1>
+
+            <p>
+                Your time is limited. Learn to recognise the habits,
+                distractions and decisions that quietly consume it.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <main>
+
+        <section class="time-intro">
+
+            <h2>
+                Time is often lost before we realise it.
+            </h2>
+
+            <p>
+                Many students do not struggle because they have no time.
+                They struggle because their available time is repeatedly
+                interrupted, delayed or spent without a clear purpose.
+                Understanding your time offenders is the first step toward
+                using your day intentionally.
+            </p>
+
+        </section>
+
+
+        <!-- ================= TIME OFFENDERS ================= -->
+
+        <section class="offenders-section">
+
+            <h2>
+                Common Time Offenders
+            </h2>
+
+            <div class="offenders-grid">
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Procrastination
+                    </h3>
+
+                    <p>
+                        Delaying an important task often creates pressure later.
+                        Starting with a small, clear action can make difficult
+                        work easier to approach.
+                    </p>
+
+                </article>
+
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Unplanned Browsing
+                    </h3>
+
+                    <p>
+                        Going online without a defined purpose can turn a short
+                        break into a long period of scrolling, searching or
+                        watching unrelated content.
+                    </p>
+
+                </article>
+
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Poor Planning
+                    </h3>
+
+                    <p>
+                        When everything feels important, it becomes difficult
+                        to know what should happen first. A simple plan gives
+                        your time direction.
+                    </p>
+
+                </article>
+
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Task Switching
+                    </h3>
+
+                    <p>
+                        Constantly moving between assignments, messages and
+                        entertainment can make concentration harder and reduce
+                        the quality of your work.
+                    </p>
+
+                </article>
+
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Perfectionism
+                    </h3>
+
+                    <p>
+                        Wanting your work to be excellent is valuable, but
+                        repeatedly polishing small details can prevent you from
+                        completing important tasks.
+                    </p>
+
+                </article>
+
+
+                <article class="offender-card">
+
+                    <div class="offender-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Overcommitting
+                    </h3>
+
+                    <p>
+                        Accepting every request can leave too little time for
+                        your own priorities. Learn to recognise what deserves
+                        your time.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TIME AUDIT ================= -->
+
+        <section class="time-audit">
+
+            <div class="audit-container">
+
+                <div class="audit-heading">
+
+                    <h2>
+                        Where Did Your Time Go?
+                    </h2>
+
+                    <p>
+                        Before changing your routine, observe it.
+                        A simple time audit can reveal patterns that are easy
+                        to overlook.
+                    </p>
+
+                </div>
+
+
+                <div class="audit-grid">
+
+                    <div class="audit-box">
+                        <strong>Study</strong>
+                        <span>How much focused learning did you complete?</span>
+                    </div>
+
+                    <div class="audit-box">
+                        <strong>Work</strong>
+                        <span>What responsibilities required your attention?</span>
+                    </div>
+
+                    <div class="audit-box">
+                        <strong>Distractions</strong>
+                        <span>What activities consumed time unexpectedly?</span>
+                    </div>
+
+                    <div class="audit-box">
+                        <strong>Rest</strong>
+                        <span>Did you give yourself meaningful recovery time?</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DAILY SYSTEM ================= -->
+
+        <section class="daily-system">
+
+            <h2>
+                A Simple Daily System
+            </h2>
+
+            <div class="system-container">
+
+                <article class="system-step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        Decide what needs to be done before the day becomes
+                        crowded with distractions.
+                    </p>
+
+                </article>
+
+
+                <article class="system-step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Prioritize
+                    </h3>
+
+                    <p>
+                        Identify the tasks that matter most and give them
+                        appropriate attention.
+                    </p>
+
+                </article>
+
+
+                <article class="system-step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Focus
+                    </h3>
+
+                    <p>
+                        Work on one important task at a time and reduce
+                        unnecessary interruptions.
+                    </p>
+
+                </article>
+
+
+                <article class="system-step">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Review
+                    </h3>
+
+                    <p>
+                        At the end of the day, look at what you completed,
+                        what delayed you and what should change tomorrow.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHECKLIST ================= -->
+
+        <section class="checklist">
+
+            <div class="checklist-container">
+
+                <h2>
+                    Your Time Check
+                </h2>
+
+                <ul>
+
+                    <li>
+                        Do I know what my most important task is today?
+                    </li>
+
+                    <li>
+                        Am I spending more time planning than actually doing?
+                    </li>
+
+                    <li>
+                        What usually interrupts my concentration?
+                    </li>
+
+                    <li>
+                        Do I use my phone with a clear purpose?
+                    </li>
+
+                    <li>
+                        Am I trying to do too many things at once?
+                    </li>
+
+                    <li>
+                        Did today's activities support the goals I care about?
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="time-cta">
+
+            <h2>
+                Take control of your time.
+            </h2>
+
+            <p>
+                You cannot create more hours in a day, but you can become
+                more intentional about how you use the hours you already have.
+            </p>
+
+            <a href="habits.html" class="cta-button">
+                Back to Effective Habits
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            <strong>KIM TEAM</strong> — Learn with purpose. Grow with structure.
+        </p>
+
+        <p>
+            &copy; 2026 KIM TEAM. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        menuToggle.addEventListener("click", function () {
+
+            mainNav.classList.toggle("show");
+
+        });
+
+    </script>
+
+</body>
+</html>

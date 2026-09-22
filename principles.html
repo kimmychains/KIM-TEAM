@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Living Principally | KIM TEAM</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #222;
+            background: #f7f9fc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #173b6c;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1769aa;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .principles-hero {
+            min-height: 470px;
+            background:
+                linear-gradient(rgba(9, 28, 52, 0.78), rgba(9, 28, 52, 0.78)),
+                url("../images/effective-habits.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            color: white;
+        }
+
+        .principles-hero-content {
+            max-width: 850px;
+        }
+
+        .principles-label {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 30px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+        }
+
+        .principles-hero h1 {
+            font-size: 54px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .principles-hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            color: #e8eef6;
+        }
+
+        /* ================= INTRO ================= */
+
+        .principles-intro {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 25px 55px;
+            text-align: center;
+        }
+
+        .principles-intro h2 {
+            font-size: 35px;
+            color: #173b6c;
+            margin-bottom: 18px;
+        }
+
+        .principles-intro p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* ================= PRINCIPLES ================= */
+
+        .principles-section {
+            padding: 40px 7% 90px;
+        }
+
+        .principles-section > h2 {
+            text-align: center;
+            color: #173b6c;
+            font-size: 34px;
+            margin-bottom: 45px;
+        }
+
+        .principles-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .principle-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+            border-top: 4px solid #1769aa;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.11);
+        }
+
+        .principle-number {
+            color: #1769aa;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .principle-card h3 {
+            color: #173b6c;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .principle-card p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* ================= DECISION SECTION ================= */
+
+        .decision-section {
+            background: #173b6c;
+            color: white;
+            padding: 85px 7%;
+        }
+
+        .decision-container {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .decision-text h2 {
+            font-size: 37px;
+            margin-bottom: 18px;
+        }
+
+        .decision-text p {
+            color: #dce7f4;
+            font-size: 16px;
+        }
+
+        .decision-questions {
+            background: rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .decision-questions h3 {
+            margin-bottom: 18px;
+        }
+
+        .decision-questions ul {
+            list-style: none;
+        }
+
+        .decision-questions li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            color: #e2eaf3;
+        }
+
+        .decision-questions li:last-child {
+            border-bottom: none;
+        }
+
+        .decision-questions li::before {
+            content: "→";
+            margin-right: 10px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* ================= DAILY PRINCIPLES ================= */
+
+        .daily-principles {
+            background: white;
+            padding: 90px 7%;
+        }
+
+        .daily-principles h2 {
+            text-align: center;
+            color: #173b6c;
+            font-size: 34px;
+            margin-bottom: 45px;
+        }
+
+        .daily-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .daily-card {
+            text-align: center;
+            background: #f4f7fb;
+            padding: 30px 20px;
+            border-radius: 15px;
+        }
+
+        .daily-card span {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+        .daily-card h3 {
+            color: #173b6c;
+            margin-bottom: 10px;
+        }
+
+        .daily-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ================= REFLECTION ================= */
+
+        .reflection {
+            padding: 80px 7%;
+            background: #eef3f8;
+        }
+
+        .reflection-box {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+
+        .reflection-box h2 {
+            color: #173b6c;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .reflection-box p {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .reflection-box ul {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .reflection-box li {
+            padding: 13px 0;
+            border-bottom: 1px solid #e4e8ed;
+            color: #555;
+        }
+
+        .reflection-box li:last-child {
+            border-bottom: none;
+        }
+
+        .reflection-box li::before {
+            content: "✓";
+            color: #1769aa;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        /* ================= CTA ================= */
+
+        .principles-cta {
+            padding: 90px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #1769aa, #173b6c);
+            color: white;
+        }
+
+        .principles-cta h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .principles-cta p {
+            max-width: 650px;
+            margin: auto auto 30px;
+            color: #e5edf7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: #173b6c;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #101d2e;
+            color: #ccd6e2;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .daily-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .decision-container {
+                grid-template-columns: 1fr;
+            }
+
+            .principles-hero h1 {
+                font-size: 43px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 17px 5%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            }
+
+            nav.show {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .principles-hero {
+                min-height: 420px;
+            }
+
+            .principles-hero h1 {
+                font-size: 36px;
+            }
+
+            .principles-hero p {
+                font-size: 17px;
+            }
+
+            .principles-grid,
+            .daily-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .principles-intro h2,
+            .principles-section > h2,
+            .daily-principles h2 {
+                font-size: 29px;
+            }
+
+            .decision-text h2 {
+                font-size: 30px;
+            }
+
+            .reflection-box {
+                padding: 30px 22px;
+            }
+
+            .principles-cta h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            KIM TEAM
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+
+        <nav id="mainNav">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="mathematics.html">Mathematics</a></li>
+
+                <li><a href="programming.html">Programming</a></li>
+
+                <li><a href="communication.html">Communication</a></li>
+
+                <li><a href="habits.html">Effective Habits</a></li>
+
+                <li><a href="articles.html">Articles</a></li>
+
+                <li><a href="register.html">Register</a></li>
+
+                <li><a href="login.html">Login</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="principles-hero">
+
+        <div class="principles-hero-content">
+
+            <span class="principles-label">
+                EFFECTIVE HABITS / 04
+            </span>
+
+            <h1>
+                Live by principles.
+            </h1>
+
+            <p>
+                Build a life guided by values, responsibility and deliberate
+                choices rather than simply following whatever happens around you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="principles-intro">
+
+            <h2>
+                Principles give your decisions direction.
+            </h2>
+
+            <p>
+                Habits determine what you repeatedly do. Principles help determine
+                why you do it. When your actions are guided by clear values,
+                it becomes easier to make decisions even when circumstances
+                change.
+            </p>
+
+        </section>
+
+
+        <!-- ================= PRINCIPLES ================= -->
+
+        <section class="principles-section">
+
+            <h2>
+                Foundations of Principled Living
+            </h2>
+
+            <div class="principles-grid">
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Responsibility
+                    </h3>
+
+                    <p>
+                        Take ownership of your choices, commitments and
+                        responsibilities instead of constantly placing blame
+                        elsewhere.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Integrity
+                    </h3>
+
+                    <p>
+                        Let your actions remain consistent with what you
+                        believe is right, including when nobody is watching.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Discipline
+                    </h3>
+
+                    <p>
+                        Do what needs to be done even when motivation is
+                        temporary or circumstances are not ideal.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Respect
+                    </h3>
+
+                    <p>
+                        Treat yourself, other people and their time with
+                        consideration. Strong learning environments depend
+                        on mutual respect.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Growth
+                    </h3>
+
+                    <p>
+                        Remain willing to learn, receive correction and improve.
+                        Being unfinished is not the same as being incapable.
+                    </p>
+
+                </article>
+
+
+                <article class="principle-card">
+
+                    <div class="principle-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Purpose
+                    </h3>
+
+                    <p>
+                        Know what you are working toward so that your daily
+                        choices connect to something larger than immediate
+                        comfort.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DECISION SECTION ================= -->
+
+        <section class="decision-section">
+
+            <div class="decision-container">
+
+                <div class="decision-text">
+
+                    <h2>
+                        Before you act, pause and think.
+                    </h2>
+
+                    <p>
+                        Good decisions do not always begin with complicated
+                        analysis. Sometimes they begin with a few honest
+                        questions about whether an action agrees with your
+                        responsibilities and values.
+                    </p>
+
+                </div>
+
+
+                <div class="decision-questions">
+
+                    <h3>
+                        Ask yourself:
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Is this consistent with my values?
+                        </li>
+
+                        <li>
+                            What are the consequences of this choice?
+                        </li>
+
+                        <li>
+                            Am I acting deliberately or simply reacting?
+                        </li>
+
+                        <li>
+                            Does this support the person I want to become?
+                        </li>
+
+                        <li>
+                            Am I willing to take responsibility for the result?
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DAILY PRINCIPLES ================= -->
+
+        <section class="daily-principles">
+
+            <h2>
+                Put Principles Into Practice
+            </h2>
+
+            <div class="daily-grid">
+
+                <article class="daily-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Keep Your Word
+                    </h3>
+
+                    <p>
+                        Treat commitments seriously and communicate honestly
+                        when circumstances change.
+                    </p>
+
+                </article>
+
+
+                <article class="daily-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Do the Work
+                    </h3>
+
+                    <p>
+                        Replace endless intention with consistent action toward
+                        meaningful responsibilities.
+                    </p>
+
+                </article>
+
+
+                <article class="daily-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Accept Correction
+                    </h3>
+
+                    <p>
+                        Use feedback as information that can help you improve
+                        rather than automatically treating it as an attack.
+                    </p>
+
+                </article>
+
+
+                <article class="daily-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Review Yourself
+                    </h3>
+
+                    <p>
+                        Regularly examine your choices and identify what you
+                        should continue, change or improve.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REFLECTION ================= -->
+
+        <section class="reflection">
+
+            <div class="reflection-box">
+
+                <h2>
+                    Personal Reflection
+                </h2>
+
+                <p>
+                    A principled life is built through repeated decisions.
+                    Take a moment to examine your own direction.
+                </p>
+
+                <ul>
+
+                    <li>
+                        What principles are most important to me?
+                    </li>
+
+                    <li>
+                        Which of my daily habits support those principles?
+                    </li>
+
+                    <li>
+                        Which habits conflict with the person I want to become?
+                    </li>
+
+                    <li>
+                        Where do I need greater discipline?
+                    </li>
+
+                    <li>
+                        What is one decision I can make differently today?
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="principles-cta">
+
+            <h2>
+                Build your habits. Build your character.
+            </h2>
+
+            <p>
+                Effective habits are not only about getting more done.
+                They are also about becoming more intentional about how you
+                learn, work and live.
+            </p>
+
+            <a href="habits.html" class="cta-button">
+                Back to Effective Habits
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            <strong>KIM TEAM</strong> — Learn with purpose. Grow with structure.
+        </p>
+
+        <p>
+            &copy; 2026 KIM TEAM. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const menuToggle = document.getElementById("menuToggle");
+        const mainNav = document.getElementById("mainNav");
+
+        menuToggle.addEventListener("click", function () {
+
+            mainNav.classList.toggle("show");
+
+        });
+
+    </script>
+
+</body>
+</html>

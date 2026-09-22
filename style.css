@@ -1,0 +1,943 @@
+/* =====================================================
+   KIM TEAM WEBSITE
+   MAIN STYLESHEET
+===================================================== */
+
+
+/* ================= GLOBAL ================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section-padding {
+    padding: 90px 0;
+}
+
+
+.section-label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #4f46e5;
+}
+
+
+/* ================= HEADER ================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e7e9f0;
+}
+
+
+.nav-container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+
+.logo-main {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+
+.logo-sub {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #4f46e5;
+    margin-top: 4px;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.main-nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #4f46e5;
+}
+
+
+.nav-login {
+    border: 1px solid #4f46e5;
+    padding: 9px 17px;
+    border-radius: 6px;
+}
+
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 18, 38, 0.95),
+            rgba(24, 32, 65, 0.78),
+            rgba(25, 35, 70, 0.45)
+        ),
+        url("../images/learning.jpg");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-text {
+    max-width: 720px;
+}
+
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    display: block;
+    color: #a5b4fc;
+}
+
+
+.hero-description {
+    max-width: 650px;
+    font-size: 18px;
+    color: #e6e9f2;
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+}
+
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
+
+.btn-secondary:hover {
+    background: white;
+    color: #172033;
+}
+
+
+.btn-outline {
+    border: 1px solid #4f46e5;
+    color: #4f46e5;
+}
+
+
+.btn-outline:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+
+/* ================= INTRODUCTION ================= */
+
+.intro {
+    background: white;
+}
+
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+
+.intro h2 {
+    font-size: 44px;
+    line-height: 1.15;
+}
+
+
+.intro p {
+    margin-bottom: 18px;
+    color: #596174;
+}
+
+
+.text-link {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+/* ================= LEARNING ================= */
+
+.learning-section {
+    background: #f7f8fc;
+}
+
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+
+.section-heading > p:last-child {
+    color: #626b7d;
+}
+
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+.learning-card {
+    position: relative;
+    background: white;
+    padding: 40px;
+    border: 1px solid #e5e7ef;
+    border-radius: 15px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+
+.learning-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(30, 35, 60, 0.10);
+}
+
+
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #9aa1b2;
+}
+
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eef0ff;
+    color: #4f46e5;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+.learning-card h3 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+
+.learning-card > p {
+    color: #687184;
+    margin-bottom: 20px;
+}
+
+
+.learning-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+
+.learning-card li {
+    margin-bottom: 7px;
+    color: #424b5e;
+}
+
+
+.learning-card li::before {
+    content: "✓";
+    margin-right: 10px;
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+.card-link {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+/* ================= PHILOSOPHY ================= */
+
+.philosophy {
+    padding: 110px 0;
+    background:
+        linear-gradient(
+            135deg,
+            #11182e,
+            #29235a
+        );
+    color: white;
+    text-align: center;
+}
+
+
+.philosophy-content {
+    max-width: 850px;
+}
+
+
+.philosophy .section-label {
+    color: #a5b4fc;
+}
+
+
+.philosophy blockquote {
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.15;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+.philosophy p:last-child {
+    color: #cbd0df;
+}
+
+
+/* ================= ARTICLES ================= */
+
+.articles {
+    background: white;
+}
+
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.article-card {
+    padding: 35px;
+    border: 1px solid #e5e7ef;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 25, 50, 0.08);
+}
+
+
+.article-category {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #4f46e5;
+}
+
+
+.article-card h3 {
+    font-size: 23px;
+    margin: 15px 0;
+    line-height: 1.3;
+}
+
+
+.article-card p {
+    color: #687184;
+    margin-bottom: 20px;
+}
+
+
+.article-card a {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+/* ================= MEMBERSHIP ================= */
+
+.membership {
+    padding: 90px 0;
+    background: #eef0ff;
+}
+
+
+.membership-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.membership h2 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+
+.membership p:not(.section-label) {
+    color: #5e6678;
+    max-width: 650px;
+}
+
+
+.membership-buttons {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    background: #111827;
+    color: #dce1ec;
+    padding-top: 70px;
+}
+
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 50px;
+    padding-bottom: 60px;
+}
+
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.footer-grid p {
+    color: #9ca5b8;
+    margin-top: 15px;
+}
+
+
+.footer-grid h4 {
+    color: white;
+    margin-bottom: 18px;
+}
+
+
+.footer-grid a {
+    display: block;
+    margin-bottom: 10px;
+    color: #aeb6c7;
+}
+
+
+.footer-grid a:hover {
+    color: white;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #293143;
+    padding: 20px 0;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+    color: #8992a5;
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        border-bottom: 1px solid #e5e7ef;
+    }
+
+
+    .main-nav.show {
+        display: flex;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .membership-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+
+    .hero {
+        min-height: 600px;
+    }
+
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+
+    .intro h2,
+    .section-heading h2,
+    .membership h2 {
+        font-size: 34px;
+    }
+
+
+    .learning-card {
+        padding: 30px;
+    }
+
+
+    .membership-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    .membership-buttons .btn {
+        text-align: center;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   PROGRAMMING PAGE
+===================================================== */
+
+.subject-hero {
+    padding: 130px 0;
+    color: white;
+}
+
+
+.programming-hero {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(12, 18, 38, 0.96),
+            rgba(38, 34, 87, 0.85)
+        );
+}
+
+
+.subject-hero h1 {
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+
+.subject-hero p:not(.section-label) {
+    max-width: 680px;
+    font-size: 19px;
+    color: #dce1ee;
+    margin-bottom: 30px;
+}
+
+
+.subject-introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+
+.subject-introduction h2 {
+    font-size: 42px;
+    line-height: 1.15;
+}
+
+
+.subject-introduction p {
+    color: #626b7d;
+    margin-bottom: 18px;
+}
+
+
+/* ================= PROGRAMMING CURRICULUM ================= */
+
+.curriculum {
+    background: #f7f8fc;
+}
+
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+.program-card {
+    position: relative;
+    background: white;
+    border: 1px solid #e4e7ef;
+    border-radius: 15px;
+    padding: 38px;
+    transition: 0.3s;
+}
+
+
+.program-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(20, 25, 50, 0.09);
+}
+
+
+.program-number {
+    position: absolute;
+    right: 25px;
+    top: 22px;
+    color: #9ca3b4;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.program-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef0ff;
+    color: #4f46e5;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+.program-card h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+
+.program-card > p {
+    color: #687184;
+    margin-bottom: 20px;
+}
+
+
+.program-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+
+.program-card li {
+    color: #4b5568;
+    margin-bottom: 7px;
+}
+
+
+.program-card li::before {
+    content: "✓";
+    color: #4f46e5;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+.locked-link {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+/* ================= PUBLIC PROGRAMMING ================= */
+
+.programming-public {
+    background: white;
+    padding: 90px 0;
+}
+
+
+.public-learning {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+.public-learning h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+
+.public-learning > div > p:not(.section-label) {
+    color: #626b7d;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
+
+
+.access-box {
+    background: #111827;
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+
+.lock-symbol {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+
+.access-box h3 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+
+.access-box p {
+    color: #c3c9d6;
+    margin-bottom: 25px;
+}
+
+
+/* ================= RESPONSIVE PROGRAMMING ================= */
+
+@media (max-width: 800px) {
+
+    .subject-introduction,
+    .program-grid,
+    .public-learning {
+        grid-template-columns: 1fr;
+    }
+
+
+    .subject-introduction {
+        gap: 30px;
+    }
+
+
+    .public-learning {
+        gap: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .subject-hero {
+        padding: 100px 0;
+    }
+
+
+    .subject-hero h1 {
+        font-size: 50px;
+    }
+
+
+    .subject-introduction h2,
+    .public-learning h2 {
+        font-size: 34px;
+    }
+
+
+    .program-card {
+        padding: 30px;
+    }
+
+}

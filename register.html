@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Register | KIM TEAM</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        background: #f4f7fb;
+        color: #222;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    /* ================= HEADER ================= */
+
+    header {
+        background: white;
+        padding: 18px 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+        font-size: 25px;
+        font-weight: 800;
+        color: #173b6c;
+        letter-spacing: 1px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    nav a {
+        color: #333;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #1769aa;
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 27px;
+        cursor: pointer;
+    }
+
+
+    /* ================= PAGE ================= */
+
+    .register-page {
+        min-height: calc(100vh - 80px);
+        padding: 70px 20px;
+        background:
+            linear-gradient(rgba(13, 35, 63, 0.88),
+                            rgba(13, 35, 63, 0.88)),
+            url("images/effective-habits.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    /* ================= REGISTRATION CARD ================= */
+
+    .register-container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.20);
+    }
+
+
+    /* ================= TOP ================= */
+
+    .register-header {
+        background: linear-gradient(135deg, #173b6c, #1769aa);
+        color: white;
+        padding: 45px 50px;
+        text-align: center;
+    }
+
+    .register-header span {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        opacity: 0.85;
+    }
+
+    .register-header h1 {
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .register-header p {
+        color: #e4edf7;
+        max-width: 620px;
+        margin: auto;
+    }
+
+
+    /* ================= FORM ================= */
+
+    .register-form {
+        padding: 45px 50px;
+    }
+
+    .form-section {
+        margin-bottom: 38px;
+    }
+
+    .form-section-title {
+        color: #173b6c;
+        font-size: 21px;
+        margin-bottom: 22px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e8edf3;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
+    }
+
+    label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 7px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 13px 14px;
+        border: 1px solid #ccd4de;
+        border-radius: 8px;
+        font-size: 15px;
+        font-family: inherit;
+        outline: none;
+        transition: 0.3s;
+        background: white;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #1769aa;
+        box-shadow: 0 0 0 3px rgba(23,105,170,0.10);
+    }
+
+
+    /* ================= SECTION SELECTION ================= */
+
+    .section-selection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .section-option {
+        position: relative;
+    }
+
+    .section-option input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .section-option label {
+        display: block;
+        padding: 20px;
+        border: 2px solid #e0e6ed;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+        height: 100%;
+    }
+
+    .section-option label strong {
+        display: block;
+        color: #173b6c;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .section-option label small {
+        color: #666;
+        font-size: 13px;
+    }
+
+    .section-option input:checked + label {
+        border-color: #1769aa;
+        background: #f0f7fc;
+        box-shadow: 0 5px 15px rgba(23,105,170,0.10);
+    }
+
+
+    /* ================= PASSWORD ================= */
+
+    .password-note {
+        margin-top: 7px;
+        color: #777;
+        font-size: 12px;
+    }
+
+
+    /* ================= TERMS ================= */
+
+    .terms {
+        background: #f4f7fb;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .terms label {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-weight: normal;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .terms input {
+        width: auto;
+        margin-top: 5px;
+    }
+
+
+    /* ================= BUTTON ================= */
+
+    .register-button {
+        width: 100%;
+        border: none;
+        padding: 16px;
+        background: linear-gradient(135deg, #1769aa, #173b6c);
+        color: white;
+        border-radius: 9px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(23,105,170,0.25);
+    }
+
+
+    /* ================= LOGIN ================= */
+
+    .login-note {
+        text-align: center;
+        margin-top: 22px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .login-note a {
+        color: #1769aa;
+        font-weight: bold;
+    }
+
+
+    /* ================= ID INFORMATION ================= */
+
+    .student-id-info {
+        background: #eef5fb;
+        border-left: 4px solid #1769aa;
+        padding: 18px;
+        margin-bottom: 30px;
+        border-radius: 6px;
+    }
+
+    .student-id-info strong {
+        color: #173b6c;
+    }
+
+    .student-id-info p {
+        color: #555;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        background: #101d2e;
+        color: #ccd6e2;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 800px) {
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group.full {
+            grid-column: auto;
+        }
+
+        .section-selection {
+            grid-template-columns: 1fr;
+        }
+
+        .register-header {
+            padding: 38px 25px;
+        }
+
+        .register-form {
+            padding: 35px 25px;
+        }
+
+        .register-header h1 {
+            font-size: 31px;
+        }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+        header {
+            padding: 17px 5%;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        nav.show {
+            display: block;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .register-page {
+            padding: 40px 15px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        KIM TEAM
+    </div>
+
+
+    <div class="menu-toggle"
+         id="menuToggle">
+
+        ☰
+
+    </div>
+
+
+    <nav id="mainNav">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="mathematics.html">
+                    Mathematics
+                </a>
+            </li>
+
+            <li>
+                <a href="programming.html">
+                    Programming
+                </a>
+            </li>
+
+            <li>
+                <a href="communication.html">
+                    Communication
+                </a>
+            </li>
+
+            <li>
+                <a href="habits.html">
+                    Effective Habits
+                </a>
+            </li>
+
+            <li>
+                <a href="articles.html">
+                    Articles
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    Login
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= REGISTRATION PAGE ================= -->
+
+<main class="register-page">
+
+    <div class="register-container">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <section class="register-header">
+
+            <span>
+                KIM TEAM LEARNING PLATFORM
+            </span>
+
+            <h1>
+                Create Your Student Account
+            </h1>
+
+            <p>
+                Join KIM TEAM and gain access to structured learning,
+                guided practice and student resources.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <form class="register-form"
+              id="registrationForm">
+
+
+            <!-- ================= STUDENT ID ================= -->
+
+            <div class="student-id-info">
+
+                <strong>
+                    Your KIM Student ID
+                </strong>
+
+                <p>
+                    After registration, KIM TEAM will assign you a unique
+                    student identification number. This ID will be used
+                    to identify your student account.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= PERSONAL INFORMATION ================= -->
+
+            <section class="form-section">
+
+                <h2 class="form-section-title">
+                    Personal Information
+                </h2>
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="Enter your first name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            placeholder="Enter your last name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ACADEMIC INFORMATION ================= -->
+
+            <section class="form-section">
+
+                <h2 class="form-section-title">
+                    Academic Information
+                </h2>
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="academicYear">
+                            Academic Year
+                        </label>
+
+                        <select
+                            id="academicYear"
+                            name="academicYear"
+                            required
+                        >
+
+                            <option value="">
+                                Select academic year
+                            </option>
+
+                            <option value="2026">
+                                2026
+                            </option>
+
+                            <option value="2027">
+                                2027
+                            </option>
+
+                            <option value="2028">
+                                2028
+                            </option>
+
+                            <option value="2029">
+                                2029
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="educationLevel">
+                            Education Level
+                        </label>
+
+                        <select
+                            id="educationLevel"
+                            name="educationLevel"
+                            required
+                        >
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option value="secondary">
+                                Secondary School
+                            </option>
+
+                            <option value="college">
+                                College
+                            </option>
+
+                            <option value="university">
+                                University
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="institution">
+                            School / Institution
+                        </label>
+
+                        <input
+                            type="text"
+                            id="institution"
+                            name="institution"
+                            placeholder="Enter your school or institution"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SECTION ENROLMENT ================= -->
+
+            <section class="form-section">
+
+                <h2 class="form-section-title">
+                    Choose Your Learning Section
+                </h2>
+
+                <div class="section-selection">
+
+
+                    <div class="section-option">
+
+                        <input
+                            type="radio"
+                            id="mathematics"
+                            name="section"
+                            value="MAT"
+                            required
+                        >
+
+                        <label for="mathematics">
+
+                            <strong>
+                                Mathematics
+                            </strong>
+
+                            <small>
+                                Calculus and Core Algebra
+                            </small>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div class="section-option">
+
+                        <input
+                            type="radio"
+                            id="programming"
+                            name="section"
+                            value="PRG"
+                        >
+
+                        <label for="programming">
+
+                            <strong>
+                                Programming
+                            </strong>
+
+                            <small>
+                                Programming and Web Development
+                            </small>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div class="section-option">
+
+                        <input
+                            type="radio"
+                            id="communication"
+                            name="section"
+                            value="COM"
+                        >
+
+                        <label for="communication">
+
+                            <strong>
+                                Communication
+                            </strong>
+
+                            <small>
+                                Speaking, Writing and Expression
+                            </small>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <div class="section-option">
+
+                        <input
+                            type="radio"
+                            id="habits"
+                            name="section"
+                            value="EFH"
+                        >
+
+                        <label for="habits">
+
+                            <strong>
+                                Effective Habits
+                            </strong>
+
+                            <small>
+                                Study, Focus, Time and Principles
+                            </small>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ACCOUNT SECURITY ================= -->
+
+            <section class="form-section">
+
+                <h2 class="form-section-title">
+                    Account Security
+                </h2>
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            minlength="8"
+                            required
+                        >
+
+                        <span class="password-note">
+                            Use at least 8 characters.
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= TERMS ================= -->
+
+            <div class="terms">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required
+                    >
+
+                    <span>
+                        I confirm that the information I have provided is
+                        accurate and I agree to use the KIM TEAM platform
+                        responsibly.
+                    </span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- ================= SUBMIT ================= -->
+
+            <button
+                type="submit"
+                class="register-button"
+            >
+
+                Create KIM TEAM Account
+
+            </button>
+
+
+
+            <!-- ================= LOGIN ================= -->
+
+            <p class="login-note">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login here
+                </a>
+
+            </p>
+
+
+        </form>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        <strong>KIM TEAM</strong>
+        — Learn with purpose. Grow with structure.
+
+    </p>
+
+    <p>
+
+        &copy; 2026 KIM TEAM.
+        All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+    /* ================= MOBILE MENU ================= */
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const mainNav =
+        document.getElementById("mainNav");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        mainNav.classList.toggle("show");
+
+    });
+
+
+
+    /* ================= READ SELECTED SECTION ================= */
+
+    const urlParams =
+        new URLSearchParams(window.location.search);
+
+    const selectedSection =
+        urlParams.get("section");
+
+
+    if (selectedSection) {
+
+        const sectionInput =
+            document.querySelector(
+                'input[name="section"][value="' +
+                selectedSection +
+                '"]'
+            );
+
+
+        if (sectionInput) {
+
+            sectionInput.checked = true;
+
+        }
+
+    }
+
+
+
+    /* ================= REGISTRATION ================= */
+
+    const registrationForm =
+        document.getElementById("registrationForm");
+
+
+    registrationForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+
+        /* ================= PASSWORD CHECK ================= */
+
+        const password =
+            document.getElementById("password").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+
+        if (password !== confirmPassword) {
+
+            alert("The passwords do not match.");
+
+            return;
+
+        }
+
+
+
+        /* ================= GET STUDENT INFORMATION ================= */
+
+        const firstName =
+            document.getElementById("firstName").value;
+
+        const lastName =
+            document.getElementById("lastName").value;
+
+        const email =
+            document.getElementById("email").value;
+
+        const academicYear =
+            document.getElementById("academicYear").value;
+
+        const educationLevel =
+            document.getElementById("educationLevel").value;
+
+        const institution =
+            document.getElementById("institution").value;
+
+        const section =
+            document.querySelector(
+                'input[name="section"]:checked'
+            ).value;
+
+
+
+        /* ================= CREATE STUDENT ID ================= */
+
+        const studentNumber =
+            Date.now().toString().slice(-6);
+
+
+        const studentID =
+            "KIM-" +
+            academicYear +
+            "-" +
+            section +
+            "-" +
+            studentNumber;
+
+
+
+        /* ================= CREATE STUDENT RECORD ================= */
+
+        const student = {
+
+            studentID: studentID,
+
+            firstName: firstName,
+
+            lastName: lastName,
+
+            email: email,
+
+            academicYear: academicYear,
+
+            educationLevel: educationLevel,
+
+            institution: institution,
+
+            section: section,
+
+            registeredAt:
+                new Date().toISOString()
+
+        };
+
+
+
+        /* ================= SAVE CURRENT STUDENT ================= */
+
+        localStorage.setItem(
+            "kimStudent",
+            JSON.stringify(student)
+        );
+
+
+
+        /* ================= SAVE REGISTERED STUDENTS ================= */
+
+        let registeredStudents =
+            JSON.parse(
+                localStorage.getItem(
+                    "kimRegisteredStudents"
+                )
+            ) || [];
+
+
+        registeredStudents.push(student);
+
+
+        localStorage.setItem(
+            "kimRegisteredStudents",
+            JSON.stringify(
+                registeredStudents
+            )
+        );
+
+
+
+        /* ================= CHOOSE DESTINATION ================= */
+
+        let destination =
+            "dashboard.html";
+
+
+        if (section === "MAT") {
+
+            destination =
+                "mathematics.html";
+
+        }
+
+        else if (section === "PRG") {
+
+            destination =
+                "programming.html";
+
+        }
+
+        else if (section === "COM") {
+
+            destination =
+                "communication.html";
+
+        }
+
+        else if (section === "EFH") {
+
+            destination =
+                "habits.html";
+
+        }
+
+
+
+        /* ================= SUCCESS MESSAGE ================= */
+
+        alert(
+
+            "Registration successful!\n\n" +
+
+            "Welcome to KIM TEAM, " +
+            firstName +
+            ".\n\n" +
+
+            "Your KIM Student ID is:\n" +
+            studentID +
+            "\n\n" +
+
+            "You will now enter your selected learning section."
+
+        );
+
+
+
+        /* ================= OPEN SELECTED SECTION ================= */
+
+        window.location.href =
+            destination;
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>

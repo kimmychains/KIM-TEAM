@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How to Study | KIM Team</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================================
+           HOW TO STUDY PAGE
+        ========================================= */
+
+        .study-hero {
+            min-height: 72vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 20, 38, 0.96),
+                    rgba(8, 20, 38, 0.72),
+                    rgba(8, 20, 38, 0.28)
+                ),
+                url("images/effective-habits.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .study-hero-content {
+            width: min(1100px, 90%);
+            margin: auto;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .study-label {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .study-hero h1 {
+            max-width: 800px;
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            margin: 0 0 25px;
+            letter-spacing: -3px;
+        }
+
+        .study-hero h1 span {
+            color: #d8b56d;
+        }
+
+        .study-hero p {
+            max-width: 680px;
+            color: rgba(255,255,255,0.82);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .study-intro {
+            padding: 90px 20px;
+            background: #f7f8fa;
+        }
+
+        .study-intro-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .study-intro h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #101b2b;
+            margin-bottom: 20px;
+        }
+
+        .study-intro p {
+            color: #626d7d;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================================
+           STUDY PRINCIPLES
+        ========================================= */
+
+        .study-principles {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .study-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .study-heading {
+            margin-bottom: 50px;
+        }
+
+        .study-heading span {
+            color: #a17c35;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        .study-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #101b2b;
+            margin: 12px 0;
+        }
+
+        .study-heading p {
+            color: #687385;
+            max-width: 650px;
+            line-height: 1.7;
+        }
+
+        .study-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .study-card {
+            padding: 32px;
+            background: #f8f9fb;
+            border: 1px solid #e5e8ed;
+            border-radius: 16px;
+            transition: 0.3s ease;
+        }
+
+        .study-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(16,27,43,0.1);
+            border-color: #d8b56d;
+        }
+
+        .study-card-number {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #a17c35;
+            letter-spacing: 2px;
+        }
+
+        .study-card h3 {
+            margin: 15px 0;
+            color: #101b2b;
+        }
+
+        .study-card p {
+            color: #687385;
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           STUDY METHOD
+        ========================================= */
+
+        .study-method {
+            padding: 100px 20px;
+            background: #101b2b;
+            color: white;
+        }
+
+        .method-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .method-container h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 45px;
+        }
+
+        .method-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .method-item {
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 15px;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .method-item h3 {
+            color: #d8b56d;
+            margin-bottom: 10px;
+        }
+
+        .method-item p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           STUDY SYSTEM
+        ========================================= */
+
+        .study-system {
+            padding: 100px 20px;
+            background: #f7f8fa;
+        }
+
+        .system-container {
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .system-container h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #101b2b;
+            margin-bottom: 20px;
+        }
+
+        .system-container > p {
+            color: #687385;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .system-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .system-step {
+            background: white;
+            padding: 28px 15px;
+            border-radius: 14px;
+            border: 1px solid #e5e8ed;
+        }
+
+        .system-step strong {
+            display: block;
+            font-size: 2rem;
+            color: #d8b56d;
+            margin-bottom: 10px;
+        }
+
+        .system-step h3 {
+            color: #101b2b;
+            font-size: 1rem;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .study-cta {
+            padding: 100px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .study-cta h2 {
+            max-width: 750px;
+            margin: auto auto 20px;
+            color: #101b2b;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        .study-cta p {
+            max-width: 650px;
+            margin: auto auto 30px;
+            color: #687385;
+            line-height: 1.8;
+        }
+
+        .study-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #101b2b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .study-button:hover {
+            background: #d8b56d;
+            color: #101b2b;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .study-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .method-list {
+                grid-template-columns: 1fr;
+            }
+
+            .system-steps {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .study-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .system-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .study-hero h1 {
+                letter-spacing: -1px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                KIM TEAM
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mathematics.html">Learning</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="study-hero">
+
+            <div class="study-hero-content">
+
+                <span class="study-label">
+                    Effective Habits / 01
+                </span>
+
+                <h1>
+                    Learn how to
+                    <span>study.</span>
+                </h1>
+
+                <p>
+                    Studying is more than sitting with a book.
+                    It is a deliberate process of understanding,
+                    remembering, practising and applying knowledge.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             INTRO
+        ========================================== -->
+
+        <section class="study-intro">
+
+            <div class="study-intro-container">
+
+                <h2>
+                    Study smarter. Understand deeper.
+                </h2>
+
+                <p>
+                    Effective studying begins with knowing what you are
+                    trying to learn and choosing methods that make your
+                    brain actively work with the material. Instead of
+                    measuring study by hours alone, focus on understanding,
+                    recall, practice and improvement.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PRINCIPLES
+        ========================================== -->
+
+        <section class="study-principles">
+
+            <div class="study-container">
+
+                <div class="study-heading">
+
+                    <span>
+                        Core Principles
+                    </span>
+
+                    <h2>
+                        Four ideas behind effective study
+                    </h2>
+
+                    <p>
+                        Strong learning is built around active engagement,
+                        not simply exposure to information.
+                    </p>
+
+                </div>
+
+
+                <div class="study-grid">
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Ask what an idea means, why it matters,
+                            and how it connects to what you already know.
+                        </p>
+
+                    </article>
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Recall
+                        </h3>
+
+                        <p>
+                            Close your notes and try to reproduce what
+                            you learned from memory.
+                        </p>
+
+                    </article>
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Practise
+                        </h3>
+
+                        <p>
+                            Use questions, problems and applications to
+                            turn knowledge into usable ability.
+                        </p>
+
+                    </article>
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Review
+                        </h3>
+
+                        <p>
+                            Return to important material regularly instead
+                            of relying entirely on last-minute revision.
+                        </p>
+
+                    </article>
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Connect
+                        </h3>
+
+                        <p>
+                            Link new ideas to examples, previous lessons
+                            and real situations.
+                        </p>
+
+                    </article>
+
+
+                    <article class="study-card">
+
+                        <span class="study-card-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Reflect
+                        </h3>
+
+                        <p>
+                            Identify what you understand, what you do not,
+                            and what needs another attempt.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STUDY METHODS
+        ========================================== -->
+
+        <section class="study-method">
+
+            <div class="method-container">
+
+                <h2>
+                    Build a study method that works.
+                </h2>
+
+
+                <div class="method-list">
+
+
+                    <article class="method-item">
+
+                        <h3>
+                            Active Recall
+                        </h3>
+
+                        <p>
+                            Test yourself instead of repeatedly reading
+                            the same notes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="method-item">
+
+                        <h3>
+                            Practice Questions
+                        </h3>
+
+                        <p>
+                            Use questions to discover whether you can
+                            actually apply what you learned.
+                        </p>
+
+                    </article>
+
+
+                    <article class="method-item">
+
+                        <h3>
+                            Spaced Review
+                        </h3>
+
+                        <p>
+                            Revisit important material over time rather
+                            than depending only on one long session.
+                        </p>
+
+                    </article>
+
+
+                    <article class="method-item">
+
+                        <h3>
+                            Explain It
+                        </h3>
+
+                        <p>
+                            Explain an idea in your own words to reveal
+                            gaps in your understanding.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STUDY SYSTEM
+        ========================================== -->
+
+        <section class="study-system">
+
+            <div class="system-container">
+
+                <h2>
+                    A simple study cycle
+                </h2>
+
+                <p>
+                    A useful study session can follow a simple sequence
+                    that moves from preparation to practice.
+                </p>
+
+
+                <div class="system-steps">
+
+
+                    <article class="system-step">
+
+                        <strong>01</strong>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                    </article>
+
+
+                    <article class="system-step">
+
+                        <strong>02</strong>
+
+                        <h3>
+                            Learn
+                        </h3>
+
+                    </article>
+
+
+                    <article class="system-step">
+
+                        <strong>03</strong>
+
+                        <h3>
+                            Recall
+                        </h3>
+
+                    </article>
+
+
+                    <article class="system-step">
+
+                        <strong>04</strong>
+
+                        <h3>
+                            Practise
+                        </h3>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="study-cta">
+
+            <h2>
+                Your study habits determine how you use your potential.
+            </h2>
+
+            <p>
+                Build a system that helps you learn consistently,
+                understand deeply and improve deliberately.
+            </p>
+
+            <a href="register.html" class="study-button">
+                Join KIM Team
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h3>KIM TEAM</h3>
+
+                <p>
+                    Learn with purpose. Grow with structure.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Learning</h4>
+
+                <a href="mathematics.html">Mathematics</a>
+                <a href="programming.html">Programming</a>
+                <a href="communication.html">Communication</a>
+                <a href="habits.html">Effective Habits</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 KIM Team. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

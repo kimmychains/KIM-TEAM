@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minimizing Distractions | KIM Team</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================================
+           MINIMIZING DISTRACTIONS
+        ========================================= */
+
+        .distraction-hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 20, 38, 0.97) 0%,
+                    rgba(8, 20, 38, 0.82) 45%,
+                    rgba(8, 20, 38, 0.35) 100%
+                ),
+                url("images/effective-habits.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .distraction-hero-content {
+            width: min(1100px, 90%);
+            margin: auto;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .distraction-label {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .distraction-hero h1 {
+            max-width: 850px;
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.98;
+            margin: 0 0 25px;
+            letter-spacing: -3px;
+        }
+
+        .distraction-hero h1 span {
+            color: #d8b56d;
+        }
+
+        .distraction-hero p {
+            max-width: 680px;
+            color: rgba(255,255,255,0.82);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .distraction-intro {
+            padding: 95px 20px;
+            background: #f7f8fa;
+        }
+
+        .distraction-intro-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .distraction-intro h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #101b2b;
+            margin-bottom: 20px;
+        }
+
+        .distraction-intro p {
+            color: #626d7d;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+
+        /* =========================================
+           DISTRACTION TYPES
+        ========================================= */
+
+        .distraction-types {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .distraction-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .distraction-heading {
+            margin-bottom: 50px;
+        }
+
+        .distraction-heading span {
+            color: #a17c35;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        .distraction-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #101b2b;
+            margin: 12px 0;
+        }
+
+        .distraction-heading p {
+            color: #687385;
+            max-width: 650px;
+            line-height: 1.7;
+        }
+
+        .distraction-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .distraction-card {
+            position: relative;
+            padding: 35px;
+            border-radius: 17px;
+            border: 1px solid #e4e8ee;
+            background: #f8f9fb;
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+
+        .distraction-card::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: -45px;
+            top: -45px;
+            border-radius: 50%;
+            background: rgba(216,181,109,0.12);
+        }
+
+        .distraction-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(16,27,43,0.1);
+            border-color: #d8b56d;
+        }
+
+        .distraction-number {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #a17c35;
+            letter-spacing: 2px;
+        }
+
+        .distraction-card h3 {
+            color: #101b2b;
+            font-size: 1.5rem;
+            margin: 14px 0;
+        }
+
+        .distraction-card p {
+            color: #687385;
+            line-height: 1.75;
+        }
+
+
+        /* =========================================
+           FOCUS SECTION
+        ========================================= */
+
+        .focus-section {
+            padding: 100px 20px;
+            background: #101b2b;
+            color: white;
+        }
+
+        .focus-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .focus-text span {
+            color: #d8b56d;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .focus-text h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            margin: 15px 0 25px;
+        }
+
+        .focus-text p {
+            color: rgba(255,255,255,0.72);
+            line-height: 1.8;
+        }
+
+        .focus-rules {
+            display: grid;
+            gap: 15px;
+        }
+
+        .focus-rule {
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .focus-rule strong {
+            display: block;
+            color: #d8b56d;
+            margin-bottom: 7px;
+        }
+
+        .focus-rule p {
+            margin: 0;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           DIGITAL DISCIPLINE
+        ========================================= */
+
+        .digital-discipline {
+            padding: 100px 20px;
+            background: #f7f8fa;
+        }
+
+        .digital-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .digital-container h2 {
+            text-align: center;
+            color: #101b2b;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .digital-container > p {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            color: #687385;
+            line-height: 1.8;
+        }
+
+        .digital-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .digital-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e4e8ee;
+        }
+
+        .digital-card .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .digital-card h3 {
+            color: #101b2b;
+            margin-bottom: 10px;
+        }
+
+        .digital-card p {
+            color: #687385;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           FOCUS CHECKLIST
+        ========================================= */
+
+        .focus-checklist {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .checklist-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .checklist-container h2 {
+            color: #101b2b;
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 45px;
+        }
+
+        .check-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            padding: 22px 0;
+            border-bottom: 1px solid #e5e8ed;
+        }
+
+        .check-number {
+            min-width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #101b2b;
+            color: #d8b56d;
+            font-weight: 700;
+        }
+
+        .check-item h3 {
+            color: #101b2b;
+            margin: 0 0 6px;
+        }
+
+        .check-item p {
+            color: #687385;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .distraction-cta {
+            padding: 100px 20px;
+            text-align: center;
+            background: #101b2b;
+            color: white;
+        }
+
+        .distraction-cta h2 {
+            max-width: 800px;
+            margin: auto auto 20px;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        .distraction-cta p {
+            max-width: 650px;
+            margin: auto auto 30px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+
+        .distraction-button {
+            display: inline-block;
+            padding: 14px 26px;
+            background: #d8b56d;
+            color: #101b2b;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .distraction-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(216,181,109,0.2);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .focus-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .digital-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .distraction-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .distraction-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .digital-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .focus-section,
+            .distraction-types,
+            .digital-discipline,
+            .focus-checklist {
+                padding-top: 75px;
+                padding-bottom: 75px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                KIM TEAM
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="mathematics.html">Learning</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="distraction-hero">
+
+            <div class="distraction-hero-content">
+
+                <span class="distraction-label">
+                    Effective Habits / 02
+                </span>
+
+                <h1>
+                    Protect your
+                    <span>attention.</span>
+                </h1>
+
+                <p>
+                    Your attention is one of your most valuable learning
+                    resources. Learn to recognize distractions, control
+                    your environment and create space for meaningful work.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             INTRO
+        ========================================== -->
+
+        <section class="distraction-intro">
+
+            <div class="distraction-intro-container">
+
+                <h2>
+                    Not everything deserves your attention.
+                </h2>
+
+                <p>
+                    Distraction does not always look like doing something
+                    completely unrelated. Sometimes it is constantly
+                    checking messages, switching between tasks, opening
+                    unnecessary tabs or allowing interruptions to break
+                    your concentration. Effective learners learn to
+                    recognize these patterns and design their environment
+                    accordingly.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TYPES OF DISTRACTIONS
+        ========================================== -->
+
+        <section class="distraction-types">
+
+            <div class="distraction-container">
+
+                <div class="distraction-heading">
+
+                    <span>
+                        Know The Enemy
+                    </span>
+
+                    <h2>
+                        Where does your attention go?
+                    </h2>
+
+                    <p>
+                        Understanding the source of a distraction is the
+                        first step toward managing it.
+                    </p>
+
+                </div>
+
+
+                <div class="distraction-grid">
+
+
+                    <article class="distraction-card">
+
+                        <span class="distraction-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Phone & Notifications
+                        </h3>
+
+                        <p>
+                            Frequent notifications can interrupt your
+                            concentration and repeatedly pull your
+                            attention away from the task.
+                        </p>
+
+                    </article>
+
+
+                    <article class="distraction-card">
+
+                        <span class="distraction-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Social Media
+                        </h3>
+
+                        <p>
+                            Endless feeds and constant updates can consume
+                            time that you intended to use for learning.
+                        </p>
+
+                    </article>
+
+
+                    <article class="distraction-card">
+
+                        <span class="distraction-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Multitasking
+                        </h3>
+
+                        <p>
+                            Jumping between several tasks can make it harder
+                            to give any one task your full attention.
+                        </p>
+
+                    </article>
+
+
+                    <article class="distraction-card">
+
+                        <span class="distraction-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Unplanned Interruptions
+                        </h3>
+
+                        <p>
+                            Conversations, unnecessary browsing and poorly
+                            planned activities can break a productive session.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FOCUS
+        ========================================== -->
+
+        <section class="focus-section">
+
+            <div class="focus-container">
+
+
+                <div class="focus-text">
+
+                    <span>
+                        Build Focus
+                    </span>
+
+                    <h2>
+                        Make concentration easier.
+                    </h2>
+
+                    <p>
+                        Focus is not simply about having strong willpower.
+                        Your environment can either support your attention
+                        or constantly compete for it.
+                    </p>
+
+                </div>
+
+
+                <div class="focus-rules">
+
+
+                    <article class="focus-rule">
+
+                        <strong>
+                            One task at a time
+                        </strong>
+
+                        <p>
+                            Decide what you are working on before you begin.
+                        </p>
+
+                    </article>
+
+
+                    <article class="focus-rule">
+
+                        <strong>
+                            Remove unnecessary alerts
+                        </strong>
+
+                        <p>
+                            Reduce interruptions that do not contribute to
+                            your immediate objective.
+                        </p>
+
+                    </article>
+
+
+                    <article class="focus-rule">
+
+                        <strong>
+                            Prepare your environment
+                        </strong>
+
+                        <p>
+                            Keep the materials you need nearby and remove
+                            unnecessary sources of interruption.
+                        </p>
+
+                    </article>
+
+
+                    <article class="focus-rule">
+
+                        <strong>
+                            Give yourself breaks
+                        </strong>
+
+                        <p>
+                            Planned breaks can help you return to your work
+                            with renewed attention.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             DIGITAL DISCIPLINE
+        ========================================== -->
+
+        <section class="digital-discipline">
+
+            <div class="digital-container">
+
+                <h2>
+                    Build digital discipline.
+                </h2>
+
+                <p>
+                    Technology can be an excellent learning tool when you
+                    decide how and when you will use it.
+                </p>
+
+
+                <div class="digital-grid">
+
+
+                    <article class="digital-card">
+
+                        <div class="icon">
+                            🔕
+                        </div>
+
+                        <h3>
+                            Silence
+                        </h3>
+
+                        <p>
+                            Reduce unnecessary notifications during
+                            focused learning sessions.
+                        </p>
+
+                    </article>
+
+
+                    <article class="digital-card">
+
+                        <div class="icon">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Purpose
+                        </h3>
+
+                        <p>
+                            Open an app or website because you have a
+                            specific reason to use it.
+                        </p>
+
+                    </article>
+
+
+                    <article class="digital-card">
+
+                        <div class="icon">
+                            ⏳
+                        </div>
+
+                        <h3>
+                            Boundaries
+                        </h3>
+
+                        <p>
+                            Decide when entertainment and social browsing
+                            fit into your schedule.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CHECKLIST
+        ========================================== -->
+
+        <section class="focus-checklist">
+
+            <div class="checklist-container">
+
+                <h2>
+                    Before you start studying...
+                </h2>
+
+
+                <div class="check-item">
+
+                    <span class="check-number">
+                        1
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            What am I studying?
+                        </h3>
+
+                        <p>
+                            Define the specific task instead of beginning
+                            with a vague intention to "study."
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-number">
+                        2
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            What do I need?
+                        </h3>
+
+                        <p>
+                            Prepare your books, notes, laptop and other
+                            materials before beginning.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-number">
+                        3
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            What could interrupt me?
+                        </h3>
+
+                        <p>
+                            Identify likely distractions and deal with them
+                            before they break your concentration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-number">
+                        4
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            What is my next action?
+                        </h3>
+
+                        <p>
+                            Start with one clear action instead of waiting
+                            for motivation to appear.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="distraction-cta">
+
+            <h2>
+                Give your attention a direction.
+            </h2>
+
+            <p>
+                When you control what receives your attention,
+                you give yourself a better opportunity to learn deeply.
+            </p>
+
+            <a href="habits.html" class="distraction-button">
+                Back to Effective Habits
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h3>KIM TEAM</h3>
+
+                <p>
+                    Learn with purpose. Grow with structure.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Learning</h4>
+
+                <a href="mathematics.html">Mathematics</a>
+                <a href="programming.html">Programming</a>
+                <a href="communication.html">Communication</a>
+                <a href="habits.html">Effective Habits</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 KIM Team. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
